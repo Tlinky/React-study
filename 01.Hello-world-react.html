@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./rely/react.development.js"></script>
+    <script src="./rely/react-dom.development.js"></script>
+    <script src="./rely/babel.min.js"></script>
+</head>
+<body>
+
+  <div id="app"></div>
+
+  <script type="text/babel">
+// 将数据定义到变量中
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      message: "Hello world"
+    }
+  }
+
+
+render() {
+  return (
+    <div>
+      <h2>{this.state.message}</h2>
+      <button onClick = {this.changeText.bind(this)}>改变文本</button>
+    </div>  
+  )
+}
+
+changeText() {
+  this.setState({
+    message: "Hello React"
+  })
+}
+}
+ReactDOM.render(<App/>, document.getElementById("app"))
+  </script>
+</body>
+</html>
